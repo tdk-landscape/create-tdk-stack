@@ -1,0 +1,22 @@
+{
+  "name": "create-tdk-stack",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Forge TDK landing page for starting local-first microservice stacks with TDK CLI.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "gsap": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
