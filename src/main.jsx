@@ -1,37 +1,62 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Boxes, Check, Copy, Database, ExternalLink, KeyRound, Network, Route, Search, Server, ShieldCheck, Terminal, TestTube2, Workflow, Zap } from 'lucide-react';
+import {
+  Boxes,
+  Check,
+  Copy,
+  Database,
+  ExternalLink,
+  FileCode2,
+  KeyRound,
+  Network,
+  Play,
+  Route,
+  Server,
+  ShieldCheck,
+  Terminal,
+  TestTube2,
+  Workflow,
+  Zap
+} from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './styles.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const tech = [
-  ['Bun', Zap, 'Fast package installs and TypeScript runtime for generated services.'],
-  ['Node.js', Server, 'The standard JavaScript runtime path for existing teams and libraries.'],
-  ['TypeScript', ShieldCheck, 'Typed contracts across apps, APIs, workers, and SDKs.'],
-  ['Docker', Boxes, 'Plain containers for every service, database, queue, and tool.'],
-  ['Traefik', Route, 'Automatic local domains, routing, retries, and health-aware discovery.'],
-  ['Tilt', Workflow, 'Selective startup and hot reload for only the services you touch.'],
-  ['Prisma', Database, 'Generated database clients, migrations, and service data wiring.'],
-  ['PostgreSQL', Database, 'Real relational state running locally from the first boot.'],
-  ['NATS JetStream', Network, 'Queues and events included in the development loop.'],
-  ['Infisical', KeyRound, 'Machine identities and secrets without onboarding spreadsheets.'],
-  ['Playwright', TestTube2, 'End-to-end tests against the actual local topology.'],
-  ['AGENTS.md', Terminal, 'A generated map for humans, Codex, Cursor, and Claude.']
+const command = 'npm create tdk-stack@latest';
+
+const stack = [
+  ['Bun', Zap, 'Fast installs and TypeScript-first service runtime.'],
+  ['Node.js', Server, 'Works with the ecosystem teams already know.'],
+  ['TypeScript', ShieldCheck, 'Typed contracts between apps, APIs, and workers.'],
+  ['Docker', Boxes, 'Every service, queue, database, and tool in containers.'],
+  ['Traefik', Route, 'Local domains, routing, health checks, and discovery.'],
+  ['Tilt', Workflow, 'Selective startup with hot reload for active services.'],
+  ['Prisma', Database, 'Migrations, clients, and predictable data access.'],
+  ['PostgreSQL', Database, 'Real relational state from the first boot.'],
+  ['NATS JetStream', Network, 'Streams, queues, and evented workflows built in.'],
+  ['Infisical', KeyRound, 'Secrets and machine identities without spreadsheet drift.'],
+  ['Playwright', TestTube2, 'Browser tests wired against the generated stack.'],
+  ['AGENTS.md', FileCode2, 'A repo map for Codex, Cursor, Claude, and humans.']
+];
+
+const featureCards = [
+  ['Describe the landscape', 'Choose service types, runtimes, databases, eventing, testing, and secrets in one tiny prompt.'],
+  ['Generate the topology', 'TDK writes manifests, Dockerfiles, routes, env contracts, diagrams, docs, and runnable service code.'],
+  ['Boot only what matters', 'Tilt starts the selected stack, Traefik routes it, and hot reload stays armed for the services you touch.']
 ];
 
 const terminalLines = [
   '$ npm create tdk-stack@latest',
   'Need to install create-tdk-stack. Ok to proceed? yes',
-  'What are you building? commerce',
-  'Pick runtimes: Bun, Node.js',
-  'Pick infrastructure: Docker, Traefik, Tilt',
-  'Pick data: PostgreSQL, Prisma, NATS JetStream',
-  'Pick safety: Infisical, Playwright, AGENTS.md',
-  'Generated 4 services, 68 files, C4 diagrams, env contracts',
-  'Ready in 4.6s'
+  'Project name: commerce-lab',
+  'Runtime: Bun + Node.js',
+  'Infrastructure: Docker, Traefik, Tilt',
+  'Data: PostgreSQL, Prisma, NATS JetStream',
+  'Safety: Infisical, Playwright, AGENTS.md',
+  'Generated 4 services, 68 files, C4 diagrams',
+  'ready - stack live in 4.6s'
 ];
 
 function App() {
@@ -40,42 +65,66 @@ function App() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.hero-logo, .hero h1, .hero-copy, .hero-actions, .install-card', {
-        y: 34,
+      gsap.from('.nav, .hero-kicker, .hero h1, .hero-copy, .hero-actions, .command-bar, .console-card', {
+        y: 36,
         opacity: 0,
-        duration: 0.85,
-        stagger: 0.08,
+        duration: 0.9,
+        stagger: 0.065,
         ease: 'power3.out'
       });
-      gsap.from('.tech-card', {
-        y: 28,
+
+      gsap.from('.stack-tile', {
+        y: 34,
         opacity: 0,
-        duration: 0.65,
-        stagger: 0.045,
+        scale: 0.94,
+        duration: 0.7,
+        stagger: 0.035,
         ease: 'power3.out',
-        scrollTrigger: { trigger: '.tech-grid', start: 'top 82%' }
+        scrollTrigger: { trigger: '.stack-grid', start: 'top 78%' }
       });
-      gsap.to('.word', {
+
+      gsap.to('.reveal-word', {
         opacity: 1,
         y: 0,
-        stagger: 0.035,
+        stagger: 0.028,
         ease: 'none',
-        scrollTrigger: { trigger: '.manifesto', start: 'top 80%', end: 'bottom 48%', scrub: 0.55 }
+        scrollTrigger: { trigger: '.manifesto', start: 'top 82%', end: 'bottom 48%', scrub: 0.7 }
       });
+
+      gsap.utils.toArray('.flow-card').forEach((card, index) => {
+        gsap.fromTo(card,
+          { y: 90 + index * 22, scale: 0.88, opacity: 0.35 },
+          {
+            y: index * -18,
+            scale: 1,
+            opacity: 1,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              end: 'top 28%',
+              scrub: true
+            }
+          }
+        );
+      });
+
       ScrollTrigger.create({
-        trigger: '.compact-demo',
-        start: 'top 20%',
-        end: 'bottom 95%',
-        pin: '.demo-copy',
+        trigger: '.build-flow',
+        start: 'top 12%',
+        end: 'bottom 86%',
+        pin: '.flow-copy',
         pinSpacing: false
       });
     });
+
     return () => ctx.revert();
   }, []);
 
   useEffect(() => {
     const node = terminalRef.current;
     if (!node) return;
+
     node.innerHTML = '';
     let lineIndex = 0;
     let charIndex = 0;
@@ -87,6 +136,7 @@ function App() {
       const line = terminalLines[lineIndex];
       row.textContent = line.slice(0, charIndex + 1);
       charIndex += 1;
+
       if (charIndex >= line.length) {
         lineIndex += 1;
         charIndex = 0;
@@ -98,97 +148,124 @@ function App() {
         row.className = 'terminal-line';
         node.appendChild(row);
       }
-    }, 24);
+    }, 22);
 
     return () => window.clearInterval(timer);
   }, []);
 
   const copyCommand = async () => {
-    await navigator.clipboard.writeText('npm create tdk-stack@latest');
+    await navigator.clipboard.writeText(command);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1400);
   };
 
-  const manifesto = 'Forge TDK does one thing: start a complete local microservice landscape without hiding the stack. Choose what you need, skip what you do not, and keep every generated file.';
+  const manifesto = 'A tiny starter with serious defaults. Forge TDK gives you the local microservice skeleton, then gets out of the way so your team can own every generated file.';
 
   return (
     <main className="site-shell">
       <nav className="nav">
-        <a className="brand" href="#top">Forge TDK</a>
+        <a className="brand" href="#top"><Terminal size={18} /> Forge TDK</a>
         <div className="nav-links">
-          <a href="#docs">Docs</a>
           <a href="#stack">Stack</a>
+          <a href="#flow">Flow</a>
           <a href="#community">Community</a>
         </div>
-        <a className="github-link" href="https://github.com/tdk-landscape/create-tdk-stack" target="_blank" rel="noreferrer"><ExternalLink size={20} /></a>
+        <a className="icon-link" href="https://github.com/tdk-landscape/create-tdk-stack" target="_blank" rel="noreferrer" aria-label="Open GitHub repository">
+          <ExternalLink size={19} />
+        </a>
       </nav>
 
       <section className="hero" id="top">
-        <div className="hero-logo"><Terminal size={54} /></div>
-        <h1>The best way to start a local-first TDK stack</h1>
-        <p className="hero-copy">A focused Create T3-style launcher for TDK CLI. It asks a few questions, then writes a runnable Bun, Node.js, Docker, Traefik, Tilt, Prisma, PostgreSQL, NATS, Infisical, and Playwright workspace.</p>
-        <div className="hero-actions">
-          <a className="button primary" href="#docs">Documentation</a>
-          <a className="button secondary" href="https://github.com/tdk-landscape/create-tdk-stack" target="_blank" rel="noreferrer">GitHub</a>
+        <div className="hero-copy-block">
+          <p className="hero-kicker">The create-t3-app idea, rebuilt for local-first TDK systems.</p>
+          <h1>
+            The fastest way to start a real TDK stack
+            <span className="inline-image" aria-hidden="true" />
+          </h1>
+          <p className="hero-copy">
+            Scaffold Bun, Node.js, TypeScript, Docker, Traefik, Tilt, Prisma, PostgreSQL, NATS JetStream, Infisical, Playwright, and AGENTS.md without turning your repo into a platform you cannot inspect.
+          </p>
+          <div className="hero-actions">
+            <a className="button primary" href="#stack"><Play size={17} /> See the stack</a>
+            <a className="button secondary" href="https://github.com/tdk-landscape/create-tdk-stack" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+          <div className="command-bar">
+            <code>{command}</code>
+            <button onClick={copyCommand} aria-label="Copy install command">{copied ? <Check size={18} /> : <Copy size={18} />}</button>
+          </div>
         </div>
-        <div className="install-card">
-          <code>npm create tdk-stack@latest</code>
-          <button onClick={copyCommand} aria-label="Copy install command">{copied ? <Check size={19} /> : <Copy size={19} />}</button>
+
+        <div className="console-card">
+          <div className="console-top"><i /><i /><i /><span>create-tdk-stack</span></div>
+          <div className="console-body" ref={terminalRef} />
         </div>
       </section>
 
-      <section className="intro" id="docs">
-        <div>
-          <h2>Local from the start</h2>
-          <p>We made Forge TDK to do one thing: streamline the setup of serious multi-service apps without compromising ownership, speed, or inspectability.</p>
-          <p>This is not an all-inclusive platform. Bring your product code. Forge TDK gives you the local topology, generated contracts, routing, secrets, tests, docs, and service scaffolding.</p>
-        </div>
-        <div className="mini-terminal">
-          <div><Search size={16} /> Pick only what you need</div>
-          <span>frontend</span>
-          <span>backend</span>
-          <span>database</span>
-          <span>queues</span>
-          <span>secrets</span>
-          <span>tests</span>
+      <section className="marquee" aria-label="Included technologies">
+        <div className="marquee-track">
+          {[...stack, ...stack].map(([name], index) => <span key={`${name}-${index}`}>{name}</span>)}
         </div>
       </section>
 
       <section className="stack-section" id="stack">
-        <div className="stack-head">
-          <h2>The best of the local microservice ecosystem...</h2>
-          <h3>...but only the parts you need</h3>
-          <p>Take what you want and nothing more.</p>
+        <div className="section-head">
+          <h2>The best parts of a modern app stack, selectable in one CLI.</h2>
+          <p>Small like create-t3-app, but aimed at full local landscapes: services, routes, secrets, databases, events, tests, and agent-readable docs.</p>
         </div>
-        <div className="tech-grid">
-          {tech.map(([name, Icon, copy]) => (
-            <article className="tech-card" key={name}>
-              <div className="tech-icon"><Icon size={28} /></div>
-              <h4>{name}</h4>
+        <div className="stack-grid">
+          {stack.slice(0, 7).map(([name, Icon, copy], index) => (
+            <article className={`stack-tile tile-${index + 1}`} key={name}>
+              <div className="tile-image" />
+              <div className="tile-content">
+                <Icon size={28} />
+                <h3>{name}</h3>
+                <p>{copy}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="stack-chips">
+          {stack.slice(7).map(([name, Icon]) => (
+            <span key={name}><Icon size={17} /> {name}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="accordions">
+        {featureCards.map(([title, copy]) => (
+          <article className="accordion-card" key={title}>
+            <h3>{title}</h3>
+            <p>{copy}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="manifesto">
+        <h2>{manifesto.split(' ').map((word, index) => <span className="reveal-word" key={`${word}-${index}`}>{word} </span>)}</h2>
+      </section>
+
+      <section className="build-flow" id="flow">
+        <div className="flow-copy">
+          <h2>From blank folder to live topology.</h2>
+          <p>Forge TDK keeps the demo concrete: manifests, generated files, health checks, hot reload, secrets, diagrams, and tests all land in the repo.</p>
+        </div>
+        <div className="flow-stack">
+          {[
+            ['Answer prompts', 'Pick Bun or Node, choose service shapes, add Docker, Traefik, Tilt, data, queues, and tests.'],
+            ['Generate files', 'Write service.json, routes, Dockerfiles, Prisma schema, env contracts, C4 diagrams, and AGENTS.md.'],
+            ['Boot locally', 'Run tdk up and get selective startup, hot reload, verified secrets, and healthy service URLs.']
+          ].map(([title, copy]) => (
+            <article className="flow-card" key={title}>
+              <h3>{title}</h3>
               <p>{copy}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="manifesto">
-        <h2>{manifesto.split(' ').map((word, index) => <span className="word" key={`${word}-${index}`}>{word} </span>)}</h2>
-      </section>
-
-      <section className="compact-demo">
-        <div className="demo-copy">
-          <h2>What it generates</h2>
-          <p>Service manifests, Dockerfiles, Vite and TypeScript config, Traefik routes, Tilt startup, Prisma setup, test wiring, C4 diagrams, and AGENTS.md.</p>
-        </div>
-        <div className="terminal">
-          <div className="terminal-bar"><i /><i /><i /><span>create-tdk-stack</span></div>
-          <div className="terminal-body" ref={terminalRef} />
-        </div>
-      </section>
-
       <section className="community" id="community">
-        <h2>Community</h2>
-        <p>Build the local stack generator with TDK Landscape. Ship useful services instead of setup rituals.</p>
+        <h2>Start small. Keep the whole landscape.</h2>
+        <p>Forge TDK is for teams who want quick starts without mystery meat infrastructure.</p>
         <div className="community-actions">
           <a className="button primary" href="https://github.com/tdk-landscape/create-tdk-stack" target="_blank" rel="noreferrer">Contribute</a>
           <a className="button secondary" href="https://github.com/tdk-landscape" target="_blank" rel="noreferrer">TDK Landscape</a>
