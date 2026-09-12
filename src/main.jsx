@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Boxes, Check, Copy, Database, Github, KeyRound, Network, Route, Search, Server, ShieldCheck, Terminal, TestTube2, Workflow, Zap } from 'lucide-react';
+import { Boxes, Check, Copy, Database, ExternalLink, KeyRound, Network, Route, Search, Server, ShieldCheck, Terminal, TestTube2, Workflow, Zap } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './styles.css';
@@ -120,7 +120,7 @@ function App() {
           <a href="#stack">Stack</a>
           <a href="#community">Community</a>
         </div>
-        <a className="github-link" href="https://github.com/tdk-landscape/create-tdk-stack" target="_blank" rel="noreferrer"><Github size={20} /></a>
+        <a className="github-link" href="https://github.com/tdk-landscape/create-tdk-stack" target="_blank" rel="noreferrer"><ExternalLink size={20} /></a>
       </nav>
 
       <section className="hero" id="top">
