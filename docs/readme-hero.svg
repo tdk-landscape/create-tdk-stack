@@ -1,99 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" fill="none">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 92) rotate(48) scale(560 360)">
+      <stop stop-color="#2563eb" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1090 118) rotate(128) scale(520 340)">
+      <stop stop-color="#14b8a6" stop-opacity=".44"/>
+      <stop offset="1" stop-color="#14b8a6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="134" y1="132" x2="1224" y2="426" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827" stop-opacity=".94"/>
+      <stop offset="1" stop-color="#05070a" stop-opacity=".96"/>
     </linearGradient>
-    <linearGradient id="card1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    <linearGradient id="line" x1="171" y1="360" x2="1228" y2="359" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60a5fa" stop-opacity="0"/>
+      <stop offset=".18" stop-color="#60a5fa"/>
+      <stop offset=".53" stop-color="#a7f3d0"/>
+      <stop offset=".86" stop-color="#f9a8d4"/>
+      <stop offset="1" stop-color="#f9a8d4" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="card2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="card3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
-    </linearGradient>
+    <filter id="softShadow" x="88" y="85" width="1234" height="386" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="32" stdDeviation="32" flood-color="#000000" flood-opacity=".42"/>
+    </filter>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" stroke="#ffffff" stroke-opacity=".055"/>
+    </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="400" fill="url(#bg)" rx="12"/>
+  <rect width="1400" height="520" rx="24" fill="#0c0b0a"/>
+  <rect width="1400" height="520" rx="24" fill="url(#grid)"/>
+  <rect width="1400" height="520" rx="24" fill="url(#glowA)"/>
+  <rect width="1400" height="520" rx="24" fill="url(#glowB)"/>
 
-  <!-- Title -->
-  <text x="600" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="bold" fill="white">
-    TDK Enterprise ERP System
-  </text>
-  <text x="600" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="white" opacity="0.9">
-    100 Microservices Across 7 Business Domains
-  </text>
-
-  <!-- Service Cards -->
-  <g transform="translate(100, 160)">
-    <!-- Finance -->
-    <rect x="0" y="0" width="140" height="180" rx="8" fill="url(#card1)" opacity="0.9"/>
-    <text x="70" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">Finance</text>
-    <text x="70" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">15 Services</text>
-    <text x="70" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">GL, AP/AR, Budgeting</text>
-    <text x="70" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Tax, Assets, Analytics</text>
+  <g opacity=".18">
+    <circle cx="120" cy="430" r="120" fill="#f7f4ee"/>
+    <circle cx="1290" cy="76" r="90" fill="#f7f4ee"/>
   </g>
 
-  <g transform="translate(260, 160)">
-    <!-- HR -->
-    <rect x="0" y="0" width="140" height="180" rx="8" fill="url(#card2)" opacity="0.9"/>
-    <text x="70" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">HR</text>
-    <text x="70" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">12 Services</text>
-    <text x="70" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Records, Recruitment</text>
-    <text x="70" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Performance, Benefits</text>
-  </g>
+  <g filter="url(#softShadow)">
+    <rect x="126" y="104" width="1148" height="320" rx="22" fill="url(#panel)" stroke="#ffffff" stroke-opacity=".14"/>
+    <path d="M126 158H1274" stroke="#ffffff" stroke-opacity=".1"/>
+    <circle cx="162" cy="132" r="7" fill="#fb7185"/>
+    <circle cx="188" cy="132" r="7" fill="#facc15"/>
+    <circle cx="214" cy="132" r="7" fill="#34d399"/>
+    <text x="248" y="137" fill="#f7f4ee" fill-opacity=".52" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">create-tdk-stack</text>
 
-  <g transform="translate(420, 160)">
-    <!-- Inventory -->
-    <rect x="0" y="0" width="140" height="180" rx="8" fill="url(#card3)" opacity="0.9"/>
-    <text x="70" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">Inventory</text>
-    <text x="70" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">18 Services</text>
-    <text x="70" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Management, Warehouse</text>
-    <text x="70" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Forecasting, Tracking</text>
-  </g>
-
-  <g transform="translate(580, 160)">
-    <!-- Sales -->
-    <rect x="0" y="0" width="140" height="180" rx="8" fill="url(#card1)" opacity="0.9"/>
-    <text x="70" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">Sales</text>
-    <text x="70" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">20 Services</text>
-    <text x="70" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">CRM, Orders, Pricing</text>
-    <text x="70" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Analytics, Forecasting</text>
-  </g>
-
-  <g transform="translate(740, 160)">
-    <!-- Manufacturing -->
-    <rect x="0" y="0" width="140" height="180" rx="8" fill="url(#card2)" opacity="0.9"/>
-    <text x="70" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">Manufacturing</text>
-    <text x="70" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">15 Services</text>
-    <text x="70" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Planning, Quality</text>
-    <text x="70" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Maintenance, BOM</text>
-  </g>
-
-  <g transform="translate(900, 160)">
-    <!-- Supply Chain -->
-    <rect x="0" y="0" width="140" height="180" rx="8" fill="url(#card3)" opacity="0.9"/>
-    <text x="70" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">Supply Chain</text>
-    <text x="70" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">12 Services</text>
-    <text x="70" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Procurement, Logistics</text>
-    <text x="70" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.8">Planning, Analytics</text>
-  </g>
-
-  <!-- Analytics spanning -->
-  <g transform="translate(200, 360)">
-    <rect x="0" y="0" width="800" height="30" rx="8" fill="white" opacity="0.2"/>
-    <text x="400" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">
-      Analytics (8 Services) - BI, Data Warehouse, Reporting, ML
+    <text x="166" y="226" fill="#ffffff" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="66" font-weight="800" letter-spacing="-1">
+      Forge TDK
     </text>
-  </g>
+    <text x="166" y="274" fill="#f7f4ee" fill-opacity=".76" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="26" font-weight="500">
+      The fastest way to start a real local-first stack.
+    </text>
 
-  <!-- Footer stats -->
-  <text x="600" y="390" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.7">
-    Declare service.json → tdk up → Enterprise ERP Landscape
-  </text>
+    <rect x="166" y="310" width="402" height="58" rx="12" fill="#05070a" stroke="#ffffff" stroke-opacity=".16"/>
+    <text x="190" y="346" fill="#d9f99d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="21">npm create tdk-stack@latest</text>
+    <path d="M168 390H1232" stroke="url(#line)" stroke-width="2"/>
+
+    <g transform="translate(742 197)">
+      <rect x="0" y="0" width="412" height="150" rx="16" fill="#ffffff" fill-opacity=".045" stroke="#ffffff" stroke-opacity=".12"/>
+      <text x="28" y="43" fill="#93c5fd" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16">$ choose stack defaults</text>
+      <text x="28" y="76" fill="#a7f3d0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16">runtime: Bun + Node.js</text>
+      <text x="28" y="109" fill="#f7f4ee" fill-opacity=".72" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16">infra: Docker - Traefik - Tilt</text>
+      <text x="28" y="142" fill="#f9a8d4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16">ready in 4.6s</text>
+    </g>
+  </g>
 </svg>

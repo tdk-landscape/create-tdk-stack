@@ -1,152 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 650" fill="none">
   <defs>
-    <linearGradient id="finance" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    <radialGradient id="cyanGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1020 90) rotate(116) scale(480 350)">
+      <stop stop-color="#14b8a6" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#14b8a6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blueGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240 150) rotate(44) scale(480 360)">
+      <stop stop-color="#2563eb" stop-opacity=".44"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="96" y1="128" x2="1244" y2="594" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".105"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".035"/>
     </linearGradient>
-    <linearGradient id="hr" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    <linearGradient id="accent" x1="130" y1="572" x2="1270" y2="572" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60a5fa"/>
+      <stop offset=".52" stop-color="#a7f3d0"/>
+      <stop offset="1" stop-color="#f9a8d4"/>
     </linearGradient>
-    <linearGradient id="inventory" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="sales" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="manufacturing" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="supply" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#d299c2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#fef9d7;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="analytics" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
-    </linearGradient>
+    <filter id="shadow" x="54" y="76" width="1292" height="532" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#000" flood-opacity=".28"/>
+    </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="600" fill="#f8fafc" rx="12"/>
+  <rect width="1400" height="650" rx="24" fill="#0c0b0a"/>
+  <rect width="1400" height="650" rx="24" fill="url(#blueGlow)"/>
+  <rect width="1400" height="650" rx="24" fill="url(#cyanGlow)"/>
 
-  <!-- Title -->
-  <text x="600" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
-    Enterprise ERP Architecture
-  </text>
-  <text x="600" y="65" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">
-    100 Microservices organized by business domain
-  </text>
+  <text x="92" y="86" fill="#ffffff" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="44" font-weight="800">A starter surface with serious defaults.</text>
+  <text x="94" y="123" fill="#f7f4ee" fill-opacity=".67" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="19">Describe the landscape, generate the topology, then boot only what matters.</text>
 
-  <!-- Bento Grid -->
-  <g transform="translate(50, 90)">
-    <!-- Finance (Large) -->
-    <rect x="0" y="0" width="250" height="220" rx="12" fill="url(#finance)" opacity="0.9"/>
-    <text x="125" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">Finance</text>
-    <text x="125" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">15 Services</text>
-    <text x="125" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.9">Ports: 4010-4024</text>
-    <text x="125" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.9">Frontend: 3010</text>
-    <text x="125" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">GL, AP/AR, Budgeting</text>
-    <text x="125" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Tax, Assets, Analytics</text>
-    <text x="125" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Audit, Payroll</text>
-  </g>
-
-  <g transform="translate(270, 90)">
-    <!-- HR (Medium) -->
-    <rect x="0" y="0" width="180" height="140" rx="12" fill="url(#hr)" opacity="0.9"/>
-    <text x="90" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">HR</text>
-    <text x="90" y="65" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white">12 Services</text>
-    <text x="90" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.9">Ports: 4100-4111</text>
-    <text x="90" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.9">Frontend: 3020</text>
-  </g>
-
-  <g transform="translate(470, 90)">
-    <!-- Inventory (Large) -->
-    <rect x="0" y="0" width="220" height="220" rx="12" fill="url(#inventory)" opacity="0.9"/>
-    <text x="110" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">Inventory</text>
-    <text x="110" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">18 Services</text>
-    <text x="110" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.9">Ports: 4200-4217</text>
-    <text x="110" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Management, Warehouse</text>
-    <text x="110" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Forecasting, Tracking</text>
-    <text x="110" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Multi-location, Batch</text>
-    <text x="110" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Frontend: 3040</text>
-  </g>
-
-  <g transform="translate(710, 90)">
-    <!-- Sales (Very Large) -->
-    <rect x="0" y="0" width="280" height="220" rx="12" fill="url(#sales)" opacity="0.9"/>
-    <text x="140" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">Sales</text>
-    <text x="140" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">20 Services</text>
-    <text x="140" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.9">Ports: 4300-4319</text>
-    <text x="140" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">CRM, Orders, Pricing</text>
-    <text x="140" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Forecasting, Analytics</text>
-    <text x="140" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Commission, Territory</text>
-    <text x="140" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">Frontend: 3030</text>
-  </g>
-
-  <g transform="translate(1010, 90)">
-    <!-- Manufacturing (Medium) -->
-    <rect x="0" y="0" width="140" height="140" rx="12" fill="url(#manufacturing)" opacity="0.9"/>
-    <text x="70" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Manufacturing</text>
-    <text x="70" y="65" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1e293b">15 Services</text>
-    <text x="70" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e293b" opacity="0.8">Ports: 4400-4414</text>
-    <text x="70" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e293b" opacity="0.8">Frontend: 3050</text>
-  </g>
-
-  <!-- Second Row -->
-  <g transform="translate(50, 330)">
-    <!-- Supply Chain (Medium) -->
-    <rect x="0" y="0" width="180" height="140" rx="12" fill="url(#supply)" opacity="0.9"/>
-    <text x="90" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Supply Chain</text>
-    <text x="90" y="65" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1e293b">12 Services</text>
-    <text x="90" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e293b" opacity="0.8">Ports: 4500-4511</text>
-    <text x="90" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e293b" opacity="0.8">Frontend: 3060</text>
-  </g>
-
-  <g transform="translate(250, 330)">
-    <!-- Analytics (Large) -->
-    <rect x="0" y="0" width="340" height="140" rx="12" fill="url(#analytics)" opacity="0.9"/>
-    <text x="170" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">Analytics</text>
-    <text x="170" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white">8 Services</text>
-    <text x="170" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" opacity="0.9">Ports: 4600-4607</text>
-    <text x="170" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.8">BI, Data Warehouse, ML, Dashboard • Frontend: 3070</text>
-  </g>
-
-  <g transform="translate(610, 330)">
-    <!-- Summary Stats -->
-    <rect x="0" y="0" width="540" height="140" rx="12" fill="#e2e8f0" opacity="0.5"/>
-    <text x="270" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">System Overview</text>
-
-    <g transform="translate(40, 50)">
-      <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Total Services</text>
-      <text x="0" y="20" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">100</text>
+  <g filter="url(#shadow)">
+    <rect x="92" y="168" width="508" height="238" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity=".12"/>
+    <text x="130" y="223" fill="#ffffff" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="31" font-weight="800">Describe the landscape</text>
+    <text x="130" y="266" fill="#f7f4ee" fill-opacity=".72" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="18">Choose services, runtimes, databases, queues,</text>
+    <text x="130" y="293" fill="#f7f4ee" fill-opacity=".72" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="18">secrets, tests, and docs from one CLI flow.</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+      <rect x="130" y="326" width="120" height="42" rx="21" fill="#93c5fd" fill-opacity=".18"/>
+      <text x="190" y="352" text-anchor="middle" fill="#bfdbfe">runtime</text>
+      <rect x="264" y="326" width="118" height="42" rx="21" fill="#a7f3d0" fill-opacity=".16"/>
+      <text x="323" y="352" text-anchor="middle" fill="#bbf7d0">infra</text>
+      <rect x="396" y="326" width="136" height="42" rx="21" fill="#f9a8d4" fill-opacity=".15"/>
+      <text x="464" y="352" text-anchor="middle" fill="#fbcfe8">safety</text>
     </g>
 
-    <g transform="translate(160, 50)">
-      <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Business Domains</text>
-      <text x="0" y="20" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">7</text>
-    </g>
+    <rect x="624" y="168" width="300" height="238" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity=".12"/>
+    <text x="662" y="223" fill="#ffffff" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="800">Generate files</text>
+    <text x="662" y="265" fill="#f7f4ee" fill-opacity=".7" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="17">Manifests, routes, Dockerfiles, Prisma schema, env contracts, diagrams, and agent docs.</text>
+    <text x="662" y="341" fill="#d9f99d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18">68 files written</text>
 
-    <g transform="translate(320, 50)">
-      <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Frontend Apps</text>
-      <text x="0" y="20" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">7</text>
-    </g>
+    <rect x="948" y="168" width="360" height="238" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity=".12"/>
+    <text x="986" y="223" fill="#ffffff" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="800">Boot locally</text>
+    <text x="986" y="265" fill="#f7f4ee" fill-opacity=".7" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="17">Tilt starts selected services. Traefik routes them. Hot reload stays armed.</text>
+    <rect x="986" y="314" width="228" height="48" rx="12" fill="#05070a" stroke="#ffffff" stroke-opacity=".14"/>
+    <text x="1010" y="345" fill="#a7f3d0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17">tdk up web api</text>
 
-    <g transform="translate(440, 50)">
-      <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Backend APIs</text>
-      <text x="0" y="20" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">93</text>
-    </g>
+    <rect x="92" y="430" width="382" height="118" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity=".12"/>
+    <text x="130" y="486" fill="#ffffff" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="25" font-weight="800">Own every file</text>
+    <text x="130" y="520" fill="#f7f4ee" fill-opacity=".68" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="16">No mystery platform. Inspect, edit, commit.</text>
 
-    <text x="270" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">
-      Port Range: 3000-3070 (Frontend) • 4000-4607 (Backend)
-    </text>
+    <rect x="498" y="430" width="810" height="118" rx="18" fill="url(#card)" stroke="#ffffff" stroke-opacity=".12"/>
+    <text x="536" y="486" fill="#ffffff" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="25" font-weight="800">Bun - Node.js - TypeScript - Docker - Traefik - Tilt</text>
+    <text x="536" y="522" fill="#f7f4ee" fill-opacity=".72" font-family="Geist, ui-sans-serif, system-ui, sans-serif" font-size="20">Prisma - Postgres - NATS - Infisical - Playwright - AGENTS.md</text>
+    <path d="M130 572H1270" stroke="url(#accent)" stroke-width="3" stroke-linecap="round"/>
   </g>
-
-  <!-- Footer -->
-  <text x="600" y="550" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">
-    Each domain can be deployed independently: tdk up finance, tdk up hr, tdk up inventory, etc.
-  </text>
 </svg>
