@@ -501,6 +501,7 @@ button { font: inherit; }
 .manifesto h2 { max-width: 74rem; margin: 0 auto; }
 .reveal-word {
   display: inline-block;
+  margin-right: 0.22em;
   opacity: 0.1;
   transform: translateY(0.28em);
 }
