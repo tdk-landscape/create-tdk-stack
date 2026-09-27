@@ -13,7 +13,7 @@
   &nbsp;&nbsp;/&nbsp;&nbsp;
   <a href="#ship-it">Ship it</a>
   &nbsp;&nbsp;/&nbsp;&nbsp;
-  <a href="https://github.com/tdk-landscape/tdk-cli">TDK CLI</a>
+  <a href="https://github.com/tdk-landscape/tdk-cli-core">TDK CLI</a>
 </p>
 
 <br>
@@ -173,7 +173,7 @@ The product promise is intentionally direct: start small, keep the whole landsca
 <p align="center">
   <a href="https://github.com/tdk-landscape">TDK Landscape</a>
   &nbsp;&nbsp;/&nbsp;&nbsp;
-  <a href="https://github.com/tdk-landscape/tdk-cli">TDK CLI</a>
+  <a href="https://github.com/tdk-landscape/tdk-cli-core">TDK CLI</a>
   &nbsp;&nbsp;/&nbsp;&nbsp;
   <a href="https://github.com/tdk-landscape/create-tdk-stack">Repository</a>
   &nbsp;&nbsp;/&nbsp;&nbsp;
