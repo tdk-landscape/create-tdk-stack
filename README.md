@@ -28,6 +28,8 @@ It presents the generated stack story in one focused React/Vite experience: Bun,
   <img src="docs/readme-marquee.svg" alt="Bun, Node.js, TypeScript, Docker, Traefik, Tilt, Prisma, PostgreSQL, NATS JetStream, Infisical, Playwright, and AGENTS.md" width="100%">
 </p>
 
+> ⭐ **This page showcases [TDK CLI](https://github.com/tdk-landscape/tdk-cli-core).** If you like it, [star tdk-cli-core on GitHub](https://github.com/tdk-landscape/tdk-cli-core) so other developers can find it.
+
 ---
 
 ## Run It
